@@ -1,0 +1,77 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+#root{
+    padding: 0px;
+    margin: 0px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+.box{
+    width: 400px;
+    border: 2px solid slategrey;
+    background-color: rgb(255,255,255,0.1);
+    color: white;
+    text-align: center;
+    height: 400px;
+    box-shadow: 0 25px 44px rgb(0,220,0,0.25);
+    display: flex column;
+    justify-content: center;
+    border-radius: 12px;
+}
+.text{
+    font-weight: bolder;
+    font-size:35px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.countbox{
+    height: 90px;
+    width: 100%;
+    border: #000;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#countervalue{
+    font-weight: bolder;
+    font-size: 30px ;
+    color: #fff;
+}
+.buttons{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dec{
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bolder;
+}
+.res{
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bolder;
+}
+.inc{
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bolder;
+}
+.dec:hover{
+    background-color: rgb(255,5,68,0.765);
+}
+.res:hover{
+    background-color: rgb(167,167,167,0.765);
+}
+.inc:hover{
+    background-color: rgb(5,255,67,0.765);
+}
