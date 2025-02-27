@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+            width: 400px;
+            box-shadow: 0 0 10px black;
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        div{
+            padding: 10px;
+        }
+        input{
+            margin-left: 10px;
+        }
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="event.preventDefault(); fun();">
+            <h1>Basic Form</h1>
+            <div><label for="name">Name</label><input type="text" placeholder="Enter Name" id="name" required></div>
+            <div><label for="password">Password</label><input type="password" placeholder="Enter Password" id="password" required></div>
+            <div><label for="mobile">Mobile</label><input type="text" placeholder="Enter Mobile" maxlength="10" id="mobile" required></div>
+            <div><label for="mail">Email</label><input type="email" placeholder="Enter Email" id="mail" required></div>
+            <div><input type="submit" value="Submit"></div>
+        </form>
+    </div>
+
+    <table id="detailsTable" style="display: none">
+        <tr>
+            <th>sno</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Mobile</th>
+            <th>Email</th>
+        </tr>
+    </table>
+
+    <script>
+        var count=0;
+        function fun(){
+            count+=1;
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var phone = document.getElementById("mobile").value;
+            var email = document.getElementById("mail").value;
+
+            var table = document.getElementById("detailsTable");
+            var newRow = table.insertRow();
+            table.style.display = "table";
+            newRow.insertCell(0).innerText = count;
+            newRow.insertCell(1).innerText = name;
+            newRow.insertCell(2).innerText = password;
+            newRow.insertCell(3).innerText = phone;
+            newRow.insertCell(4).innerText = email;
+
+            document.querySelector("form").reset();
+        }
+    </script>
+</body>
+</html>
