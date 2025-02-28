@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #container{
+                display: flex;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Profile Card</h2>
+        <button onclick="cards()">Create Card</button>
+        <div id="container">
+
+        </div>
+        <script>
+            function createCard(name,url) {
+                var div1 = document.createElement("div");
+                div1.style.border = "3px solid blue";
+                div1.style.width="270px";
+                div1.style.height="330px";
+                div1.style.margin = "50px 20px";
+                var img=document.createElement("img");
+                img.width="270";
+                img.height="225";
+                img.src=url;
+                div1.appendChild(img);
+                var h2=document.createElement("h2");
+                h2.innerText=name;
+                h2.style.textAlign="center";
+                var p=document.createElement("p");
+                p.innerText=name+" is a hidden leaf Ninja...";
+                // p.style.fontSize="14px";
+                p.style.textAlign="center";
+                div1.appendChild(h2);
+                div1.appendChild(p);
+                div1.style.padding="3px";
+                document.getElementById("container").appendChild(div1);
+            }
+            function cards(){
+                arr=[{url:"https://www.shutterstock.com/image-illustration/this-character-illustration-naruto-anime-600nw-2418941781.jpg",name:"Naruto"},
+                    {url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJWv-P020IkVExygWJMafi2csgH2Lf4dSrBvuy_uu-9aZtgb7gSiijNOQJ9vcLCQGiUJc&usqp=CAU",name:"Hashirama"},
+                    {url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1RcxuxQaZTlxie_AGIM2WTaEGGwZu23sacg&s",name:"Itachi"},
+                    {url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0W7b4G144mMVOYbgTPO79xlG6fxmGX4MI-w&s",name:"Asuma"},
+                ]
+                var i=0;
+                while(i<arr.length)
+                {
+                    createCard(arr[i].name,arr[i].url);
+                    i++;
+                }
+            }
+        </script>
+    </body>
+</html>
